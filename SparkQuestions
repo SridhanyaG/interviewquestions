@@ -1,0 +1,15 @@
+Q1. Provide the averge of all the numdays and average of all the brq's from the given dataset.
+Given dataset -> 
+D1 -> [ifa:String, asnExchList:List[AsnExchange], rootNumDays:BigInt, rootBrq:BigInt]  
+AsnExchange schema - [bundle: String,brq: Long,num_days: Long] 
+D2 -> [blacklistedVpnList:List[String]]
+Before finding the average please perform the following -
+        1. Clean numdays and brq of each ifa. 
+        2. If resultant rootNumDays & rootBrq becomes negative then convert to 0
+        3. Create a dataset of -> [ifa, valid_numdays,valid_brq]
+        
+ Asyn : List struct: 
+ifa        4. Provide the averge & sum, min , max of all the numdays 
+Spark Optimization
+Scala
+Python
