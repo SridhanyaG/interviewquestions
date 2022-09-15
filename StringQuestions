@@ -1,0 +1,78 @@
+/* To find the maximum length of a substring without a repeating character.
+eg 1. aabsdfsdfrt - 4
+eg 2. aabsdfrtgh -  9
+
+*/
+/*
+A shop with n items
+n - [3, 6, 7, 3, 7, 10]
+ - [3,6,7,3,7,9]
+ 
+n[i] - number of items of category n 
+
+price of item depends on how much it is remaining 
+find the item to be sold next for maximum profit  
+
+sort the list 
+customer - [2, 5,2, 1, 4]
+[1,4,6,10] - [1,4,6,9], [1,4,6,8], [1,4,6,7] [1,4,6,6] [1,4, 6,5], 
+10, 6, 4, 1   6,6,4,1   2,4,4,1
+
+x > y // do notging
+x < y  4,4,2,1
+            
+
+*/
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    private static int getMaxString(String str) {
+    int startIndex = 0;
+    int endIndex = -1;
+    String s = "
+    
+    
+    ; 
+
+    Map<String, Integer> captureIndex = new HashMap<>();
+    for (int i=0; i<str.length(); i++) {
+        String currentElement = str.substring(i, 1);
+        System.out.println(i+" "+currentElement);
+        if (captureIndex.get(currentElement) != null) {
+            int previndex = captureIndex.get(currentElement);
+            if (previndex > startIndex) {
+                startIndex = captureIndex.get(currentElement)+ 1;
+            }
+        }
+        captureIndex.put(currentElement, i);
+        endIndex++;
+      
+    }
+    return endIndex - startIndex;
+}   
+
+ public static void main(String[] args) {
+        String s = "aabsdfsdfrt"; 
+        
+        System.out.println(getMaxString(s));
+   }
+}
+
+
+/* To find the maximum length of a substring without a repeating character.
+eg 1. aabsdfsdfrt - 4
+eg 2. aabsdfrtgh -  9
+eg.3  absdgaturd - 10 absdg, aturd 
+captureIndex : 0
+startidnex end
+0 4 
+captureIndex+1 4
+/*
+
+*/
+
